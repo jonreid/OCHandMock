@@ -1,10 +1,10 @@
 //
-//  OCHandMock - ExpectationCounterTest.m
+//  OCHandMock - ExpectationMatcherTest.m
 //  Copyright 2011 Jonathan M. Reid. See LICENSE.txt
 //
 
 	// Class under test
-#import "HMExpectationCounter.h"
+#import "HMExpectationMatcher.h"
 
 	// Test support
 #import <SenTestingKit/SenTestingKit.h>
@@ -14,29 +14,29 @@
 #import <OCHamcrestIOS/OCHamcrestIOS.h>
 
 
-@interface ExpectationCounterTest : SenTestCase
+@interface ExpectationMatcherTest : SenTestCase
 {
     MockTestCase *testCase;
-    HMExpectationCounter *counter;
+    HMExpectationMatcher *matcher;
 }
 @end
 
 
-@implementation ExpectationCounterTest
+@implementation ExpectationMatcherTest
 
 - (void)setUp
 {
     [super setUp];
     
     testCase = [[MockTestCase alloc] init];
-    counter = [[HMExpectationCounter alloc] initWithName:@"counter" testCase:testCase];
+    matcher = [[HMExpectationMatcher alloc] initWithName:@"matcher" testCase:testCase];
 }
 
 
 - (void)tearDown
 {
     [testCase release];
-    [counter release];
+    [matcher release];
     
     [super tearDown];
 }
@@ -45,60 +45,53 @@
 - (void)testNoSettingsShouldPassVerification
 {
 	// exercise
-    [counter verify];
+    [matcher verify];
     
     // verify
     assertThatUnsignedInteger([testCase failureCount], is(equalToUnsignedInteger(0)));
-}
-
-
-- (void)testNoSettingsShouldHaveNoExpectations
-{
-    // verify
-    STAssertFalse([counter hasExpectations], nil);
 }
 
 
 - (void)testSetExpectedShouldHaveExpectation
 {
     // exercise
-    [counter setExpected:1];
+    [matcher setExpected:is(@"irrelevant")];
     
     // verify
-    STAssertTrue([counter hasExpectations], nil);
+    STAssertTrue([matcher hasExpectations], nil);
 }
 
 
 - (void)testExpectNothingShouldHaveExpectation
 {
     // exercise
-    [counter setExpectNothing];
+    [matcher setExpectNothing];
     
     // verify
-    STAssertTrue([counter hasExpectations], nil);
+    STAssertTrue([matcher hasExpectations], nil);
 }
 
 
-- (void)testExpectNothingShouldPassIfNotIncremented
+- (void)testExpectNothingShouldPassIfNotInvoked
 {
     // set up
-    [counter setExpectNothing];
+    [matcher setExpectNothing];
     
     // exercise
-    [counter verify];
+    [matcher verify];
     
     // verify
     assertThatUnsignedInteger([testCase failureCount], is(equalToUnsignedInteger(0)));
 }
 
 
-- (void)testExpectNothingShouldSignalTestFailureWhenIncremented
+- (void)testExpectNothingShouldSignalTestFailureWhenInvoked
 {
     // set up
-    [counter setExpectNothing];
+    [matcher setExpectNothing];
     
     // exercise
-    [counter increment];
+    [matcher setActual:@"anything"];
     
     // verify
     assertThatUnsignedInteger([testCase failureCount], is(equalToUnsignedInteger(1)));
@@ -106,77 +99,74 @@
 }
 
 
-- (void)testIncrementPastExpectedShouldFailImmediately
+- (void)testMismatchShouldFailImmediately
 {
     // set up
-    [counter setExpected:1];
+    [matcher setExpected:is(@"foo")];
     
     // exercise
-    [counter increment];
-    [counter increment];
+    [matcher setActual:@"bar"];
     
     // verify
     assertThatUnsignedInteger([testCase failureCount], is(equalToUnsignedInteger(1)));
     assertThat([[testCase failureException] reason],
-               is(@"counter should not be called more than <1> times"));
+               is(@"matcher expected argument \"foo\", but was \"bar\""));
 }
 
 
 - (void)testFailOnVerifyShouldWaitUntilVerifyToFail
 {
     // set up
-    [counter setExpected:1];
-    [counter setFailOnVerify];
+    [matcher setExpected:is(@"foo")];
+    [matcher setFailOnVerify];
     
-    [counter increment];
-    [counter increment];
-    [counter increment];
+    [matcher setActual:@"bar"];
     assertThatUnsignedInteger([testCase failureCount], is(equalToUnsignedInteger(0)));
     
     // exercise
-    [counter verify];
+    [matcher verify];
     
     // verify
     assertThatUnsignedInteger([testCase failureCount], is(equalToUnsignedInteger(1)));
     assertThat([[testCase failureException] reason],
-               is(@"counter did not receive the expected Count. Expected <1>, but was <3>"));
+               is(@"matcher expected argument \"foo\", but was \"bar\""));
 }
 
 
 - (void)testVerifyWithUnmetExpectationShouldFail
 {
     // set up
-    [counter setExpected:1];
+    [matcher setExpected:is(@"foo")];
     
     // exercise
-    [counter verify];
+    [matcher verify];
     
     // verify
     assertThatUnsignedInteger([testCase failureCount], is(equalToUnsignedInteger(1)));
     assertThat([[testCase failureException] reason],
-               is(@"counter did not receive the expected Count. Expected <1>, but was <0>"));
+               is(@"matcher expected argument \"foo\", but was never invoked"));
 }
 
 
-- (void)testIncrementingShouldNotSetExpectation
+- (void)testInvokingShouldNotSetExpectation
 {
     // exercise
-    [counter increment];
+    [matcher setActual:@"abc"];
     
     // verify
-    STAssertFalse([counter hasExpectations], nil);
+    STAssertFalse([matcher hasExpectations], nil);
 }
 
 
-- (void)testSetExpectedShouldClearActual
+- (void)testSetExpectNothingShouldClearActual
 {
     // set up
-    [counter increment];
+    [matcher setActual:@"abc"];
     
     // exercise
-    [counter setExpected:1];
-    [counter increment];
-
+    [matcher setExpectNothing];
+    [matcher verify];
+    
     // verify
     assertThatUnsignedInteger([testCase failureCount], is(equalToUnsignedInteger(0)));
 }
@@ -185,9 +175,9 @@
 - (void)testSuccess
 {
     // exercise
-    [counter setExpected:1];
-    [counter increment];
-    [counter verify];
+    [matcher setExpected:is(@"foo")];
+    [matcher setActual:@"foo"];
+    [matcher verify];
     
     // verify
     assertThatUnsignedInteger([testCase failureCount], is(equalToUnsignedInteger(0)));
