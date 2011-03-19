@@ -11,7 +11,7 @@ My iOS mock object needs can no longer met by OCMock:
   explicitly rejected call) crashes the entire test system. This is no fault of
   OCMock, which is just raising an exception. But because the exception can't be
   caught by unit testing frameworks, the resulting crash renders this vital
-  feature of OCMock useless.
+  feature of OCMock useless and impedes test-driven development.
 
 OCHandMock is an iOS port of a small subset of jMock in its early days, designed
 to address my problems:
