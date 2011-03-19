@@ -13,15 +13,15 @@ My iOS mock object needs can no longer met by OCMock:
   caught by unit testing frameworks, the resulting crash renders this vital
   feature of OCMock useless and impedes test-driven development.
 
-OCHandMock is an iOS port of a small subset of jMock in its early days, designed
-to address my problems:
+**OCHandMock** is an iOS port of a small subset of jMock in its early days,
+designed to address my problems:
 
 * I guess I still prefer hand-coding my mock objects, using Subclass and
   Override. jMock's early architecture helps.
-* OCHamcrest is a first-class partner of OCHandMock. Mock methods can record and
-  verify their invocations with just two classes: one that verifies invocation
-  count, and another that verifies arguments using any OCHamcrest-compatible
-  matcher.
-* OCHandMock works around the iOS simulator bug. Instead of raising an
-  exception, it signals the test failure directly to your OCUnit-compatible test
-  case object, which can then report it to Xcode.
+* [OCHamcrest](https://github.com/jonreid/OCHamcrest) is a first-class partner
+  of OCHandMock. Mock methods can record and verify their invocations with just
+  two classes: one that verifies invocation count, and another that verifies
+  arguments using any OCHamcrest-compatible matcher.
+* OCHandMock works around the iOS simulator bug. Instead of raising exceptions,
+  it signals any failures directly to your OCUnit-compatible test cases, which
+  can report it to Xcode and continue the remaining tests.
