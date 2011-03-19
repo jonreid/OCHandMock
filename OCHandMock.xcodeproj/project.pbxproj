@@ -1,0 +1,451 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		087949901331BAB800731E22 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0879498F1331BAB800731E22 /* Foundation.framework */; };
+		087949CC1331C88600731E22 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0879498F1331BAB800731E22 /* Foundation.framework */; };
+		087949DF1331C9D500731E22 /* libOCHandMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0879498C1331BAB800731E22 /* libOCHandMock.a */; };
+		087949E11331CB1900731E22 /* OCHamcrestIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 087949E01331CB1900731E22 /* OCHamcrestIOS.framework */; };
+		087949E91331D04400731E22 /* HMVerifiable.h in Headers */ = {isa = PBXBuildFile; fileRef = 087949E81331D04400731E22 /* HMVerifiable.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		08B89A121334883A00D90E2C /* HMExpectation.h in Headers */ = {isa = PBXBuildFile; fileRef = 08B89A111334883A00D90E2C /* HMExpectation.h */; };
+		08B89A1913348D8900D90E2C /* OCHamcrestIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 087949E01331CB1900731E22 /* OCHamcrestIOS.framework */; };
+		08B89A22133492CF00D90E2C /* HMAbstractExpectation.h in Headers */ = {isa = PBXBuildFile; fileRef = 08B89A20133492CF00D90E2C /* HMAbstractExpectation.h */; };
+		08B89A23133492CF00D90E2C /* HMAbstractExpectation.m in Sources */ = {isa = PBXBuildFile; fileRef = 08B89A21133492CF00D90E2C /* HMAbstractExpectation.m */; };
+		08CEA80613342FA700D883DA /* ExpectationCounterTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 08CEA80513342FA700D883DA /* ExpectationCounterTest.m */; };
+		08CEA80A1334302100D883DA /* HMExpectationCounter.h in Headers */ = {isa = PBXBuildFile; fileRef = 08CEA8081334302100D883DA /* HMExpectationCounter.h */; };
+		08CEA80B1334302100D883DA /* HMExpectationCounter.m in Sources */ = {isa = PBXBuildFile; fileRef = 08CEA8091334302100D883DA /* HMExpectationCounter.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		087949DD1331C9CC00731E22 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 087949831331BAB800731E22 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0879498B1331BAB800731E22;
+			remoteInfo = OCHandMock;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0879498C1331BAB800731E22 /* libOCHandMock.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libOCHandMock.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		0879498F1331BAB800731E22 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		087949931331BAB800731E22 /* OCHandMock-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OCHandMock-Prefix.pch"; sourceTree = "<group>"; };
+		087949CA1331C88600731E22 /* Tests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		087949D01331C88600731E22 /* Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Tests-Info.plist"; sourceTree = "<group>"; };
+		087949D41331C88600731E22 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
+		087949E01331CB1900731E22 /* OCHamcrestIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OCHamcrestIOS.framework; path = "Frameworks/OCHamcrest-1.4/OCHamcrestIOS.framework"; sourceTree = SOURCE_ROOT; };
+		087949E81331D04400731E22 /* HMVerifiable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMVerifiable.h; sourceTree = "<group>"; };
+		08B89A111334883A00D90E2C /* HMExpectation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMExpectation.h; sourceTree = "<group>"; };
+		08B89A20133492CF00D90E2C /* HMAbstractExpectation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMAbstractExpectation.h; sourceTree = "<group>"; };
+		08B89A21133492CF00D90E2C /* HMAbstractExpectation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMAbstractExpectation.m; sourceTree = "<group>"; };
+		08CEA80513342FA700D883DA /* ExpectationCounterTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpectationCounterTest.m; sourceTree = "<group>"; };
+		08CEA8081334302100D883DA /* HMExpectationCounter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMExpectationCounter.h; sourceTree = "<group>"; };
+		08CEA8091334302100D883DA /* HMExpectationCounter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMExpectationCounter.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		087949891331BAB800731E22 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				087949901331BAB800731E22 /* Foundation.framework in Frameworks */,
+				08B89A1913348D8900D90E2C /* OCHamcrestIOS.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		087949C61331C88600731E22 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				087949DF1331C9D500731E22 /* libOCHandMock.a in Frameworks */,
+				087949CC1331C88600731E22 /* Foundation.framework in Frameworks */,
+				087949E11331CB1900731E22 /* OCHamcrestIOS.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		087949811331BAB800731E22 = {
+			isa = PBXGroup;
+			children = (
+				0879498C1331BAB800731E22 /* libOCHandMock.a */,
+				087949911331BAB800731E22 /* OCHandMock */,
+				087949CE1331C88600731E22 /* Tests */,
+				0879498E1331BAB800731E22 /* Frameworks */,
+				0879498D1331BAB800731E22 /* Products */,
+			);
+			sourceTree = "<group>";
+			usesTabs = 0;
+		};
+		0879498D1331BAB800731E22 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				087949CA1331C88600731E22 /* Tests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0879498E1331BAB800731E22 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0879498F1331BAB800731E22 /* Foundation.framework */,
+				087949E01331CB1900731E22 /* OCHamcrestIOS.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		087949911331BAB800731E22 /* OCHandMock */ = {
+			isa = PBXGroup;
+			children = (
+				08B89A20133492CF00D90E2C /* HMAbstractExpectation.h */,
+				08B89A21133492CF00D90E2C /* HMAbstractExpectation.m */,
+				08B89A111334883A00D90E2C /* HMExpectation.h */,
+				08CEA8081334302100D883DA /* HMExpectationCounter.h */,
+				08CEA8091334302100D883DA /* HMExpectationCounter.m */,
+				087949E81331D04400731E22 /* HMVerifiable.h */,
+				087949921331BAB800731E22 /* Supporting Files */,
+			);
+			path = OCHandMock;
+			sourceTree = "<group>";
+		};
+		087949921331BAB800731E22 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				087949931331BAB800731E22 /* OCHandMock-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		087949CE1331C88600731E22 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				08CEA80513342FA700D883DA /* ExpectationCounterTest.m */,
+				087949CF1331C88600731E22 /* Supporting Files */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		087949CF1331C88600731E22 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				087949D01331C88600731E22 /* Tests-Info.plist */,
+				087949D41331C88600731E22 /* Tests-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		0879498A1331BAB800731E22 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				087949E91331D04400731E22 /* HMVerifiable.h in Headers */,
+				08CEA80A1334302100D883DA /* HMExpectationCounter.h in Headers */,
+				08B89A121334883A00D90E2C /* HMExpectation.h in Headers */,
+				08B89A22133492CF00D90E2C /* HMAbstractExpectation.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		0879498B1331BAB800731E22 /* OCHandMock */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 087949AF1331BAB800731E22 /* Build configuration list for PBXNativeTarget "OCHandMock" */;
+			buildPhases = (
+				087949881331BAB800731E22 /* Sources */,
+				087949891331BAB800731E22 /* Frameworks */,
+				0879498A1331BAB800731E22 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OCHandMock;
+			productName = OCHandMock;
+			productReference = 0879498C1331BAB800731E22 /* libOCHandMock.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		087949C91331C88600731E22 /* Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 087949D91331C88600731E22 /* Build configuration list for PBXNativeTarget "Tests" */;
+			buildPhases = (
+				087949C51331C88600731E22 /* Sources */,
+				087949C61331C88600731E22 /* Frameworks */,
+				087949C71331C88600731E22 /* Resources */,
+				087949C81331C88600731E22 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				087949DE1331C9CC00731E22 /* PBXTargetDependency */,
+			);
+			name = Tests;
+			productName = Tests;
+			productReference = 087949CA1331C88600731E22 /* Tests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		087949831331BAB800731E22 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = "eBay Inc";
+			};
+			buildConfigurationList = 087949861331BAB800731E22 /* Build configuration list for PBXProject "OCHandMock" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 087949811331BAB800731E22;
+			productRefGroup = 0879498D1331BAB800731E22 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0879498B1331BAB800731E22 /* OCHandMock */,
+				087949C91331C88600731E22 /* Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		087949C71331C88600731E22 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		087949C81331C88600731E22 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		087949881331BAB800731E22 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				08CEA80B1334302100D883DA /* HMExpectationCounter.m in Sources */,
+				08B89A23133492CF00D90E2C /* HMAbstractExpectation.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		087949C51331C88600731E22 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				08CEA80613342FA700D883DA /* ExpectationCounterTest.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		087949DE1331C9CC00731E22 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0879498B1331BAB800731E22 /* OCHandMock */;
+			targetProxy = 087949DD1331C9CC00731E22 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		087949AD1331BAB800731E22 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				FRAMEWORK_SEARCH_PATHS = "\"$(SRCROOT)/Frameworks/OCHamcrest-1.4\"";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_TREAT_IMPLICIT_FUNCTION_DECLARATIONS_AS_ERRORS = YES;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_FIELD_INITIALIZERS = YES;
+				GCC_WARN_ABOUT_MISSING_NEWLINE = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_FOUR_CHARACTER_CONSTANTS = YES;
+				GCC_WARN_HIDDEN_VIRTUAL_FUNCTIONS = YES;
+				GCC_WARN_INITIALIZER_NOT_FULLY_BRACKETED = YES;
+				GCC_WARN_MULTIPLE_DEFINITION_TYPES_FOR_SELECTOR = YES;
+				GCC_WARN_NON_VIRTUAL_DESTRUCTOR = YES;
+				GCC_WARN_PEDANTIC = NO;
+				GCC_WARN_SHADOW = YES;
+				GCC_WARN_SIGN_COMPARE = YES;
+				GCC_WARN_STRICT_SELECTOR_MATCH = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = NO;
+				GCC_WARN_UNKNOWN_PRAGMAS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_LABEL = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		087949AE1331BAB800731E22 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				FRAMEWORK_SEARCH_PATHS = "\"$(SRCROOT)/Frameworks/OCHamcrest-1.4\"";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_TREAT_IMPLICIT_FUNCTION_DECLARATIONS_AS_ERRORS = YES;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_FIELD_INITIALIZERS = YES;
+				GCC_WARN_ABOUT_MISSING_NEWLINE = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_FOUR_CHARACTER_CONSTANTS = YES;
+				GCC_WARN_HIDDEN_VIRTUAL_FUNCTIONS = YES;
+				GCC_WARN_INITIALIZER_NOT_FULLY_BRACKETED = YES;
+				GCC_WARN_MULTIPLE_DEFINITION_TYPES_FOR_SELECTOR = YES;
+				GCC_WARN_NON_VIRTUAL_DESTRUCTOR = YES;
+				GCC_WARN_PEDANTIC = NO;
+				GCC_WARN_SHADOW = YES;
+				GCC_WARN_SIGN_COMPARE = YES;
+				GCC_WARN_STRICT_SELECTOR_MATCH = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = NO;
+				GCC_WARN_UNKNOWN_PRAGMAS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_LABEL = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
+		087949B01331BAB800731E22 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				DSTROOT = /tmp/OCHandMock.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "OCHandMock/OCHandMock-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		087949B11331BAB800731E22 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				DSTROOT = /tmp/OCHandMock.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "OCHandMock/OCHandMock-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		087949DA1331C88600731E22 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Tests/Tests-Prefix.pch";
+				INFOPLIST_FILE = "Tests/Tests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-lstdc++",
+					"-ObjC",
+					"-framework",
+					SenTestingKit,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		087949DB1331C88600731E22 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Tests/Tests-Prefix.pch";
+				INFOPLIST_FILE = "Tests/Tests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-lstdc++",
+					"-ObjC",
+					"-framework",
+					SenTestingKit,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		087949861331BAB800731E22 /* Build configuration list for PBXProject "OCHandMock" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				087949AD1331BAB800731E22 /* Debug */,
+				087949AE1331BAB800731E22 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		087949AF1331BAB800731E22 /* Build configuration list for PBXNativeTarget "OCHandMock" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				087949B01331BAB800731E22 /* Debug */,
+				087949B11331BAB800731E22 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		087949D91331C88600731E22 /* Build configuration list for PBXNativeTarget "Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				087949DA1331C88600731E22 /* Debug */,
+				087949DB1331C88600731E22 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 087949831331BAB800731E22 /* Project object */;
+}
