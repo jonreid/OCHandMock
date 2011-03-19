@@ -18,6 +18,10 @@
 @end
 
 @interface HMAbstractExpectation ()
+@property(nonatomic, copy, readwrite) NSString *name;
+@property(nonatomic, assign) id testCase;
+@property(nonatomic, assign) BOOL failureModeIsImmediate;
+@property(nonatomic, assign) BOOL hasExpectations;
 - (void)subclassResponsibility:(SEL)command;
 @end
 
@@ -26,13 +30,19 @@
 
 @implementation HMAbstractExpectation
 
+@synthesize name;
+@synthesize testCase;
+@synthesize failureModeIsImmediate;
+@synthesize hasExpectations;
+
+
 - (id)initWithName:(NSString *)aName testCase:(id)test
 {
     self = [super init];
     if (self)
     {
         name = [aName copy];
-        testCase = [test retain];
+        testCase = test;
         failureModeIsImmediate = YES;
     }
     return self;
@@ -41,9 +51,7 @@
 
 - (void)dealloc
 {
-    [testCase release];
-    [name release];
-    
+    [name release];    
     [super dealloc];
 }
 

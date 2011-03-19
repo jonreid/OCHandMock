@@ -7,14 +7,8 @@
 
 
 @interface HMAbstractExpectation : NSObject <HMExpectation>
-{
-    NSString *name;
-    id testCase;
-    BOOL failureModeIsImmediate;
-    
-    @private
-    BOOL hasExpectations;
-}
+
+@property(nonatomic, copy, readonly) NSString *name;
 
 - (id)initWithName:(NSString *)aName testCase:(id)test;
 

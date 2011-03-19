@@ -41,7 +41,7 @@
     {
         NSNumber *expectedNumber = [NSNumber numberWithUnsignedInteger:expectedCalls];
         HCStringDescription *description = [HCStringDescription stringDescription];
-        [[[[description appendText:name]
+        [[[[description appendText:[self name]]
                         appendText:@" should not be called more than "]
                         appendDescriptionOf:expectedNumber]
                         appendText:@" times"];
