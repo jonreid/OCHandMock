@@ -23,6 +23,7 @@
 		08B89A3E133574DA00D90E2C /* VerifierTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 08B89A3D133574D900D90E2C /* VerifierTest.m */; };
 		08B89A411335758E00D90E2C /* HMVerifier.h in Headers */ = {isa = PBXBuildFile; fileRef = 08B89A3F1335758D00D90E2C /* HMVerifier.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		08B89A421335758E00D90E2C /* HMVerifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 08B89A401335758E00D90E2C /* HMVerifier.m */; };
+		08B89A7E1335C7E000D90E2C /* OCHandMock.h in Headers */ = {isa = PBXBuildFile; fileRef = 08B89A7D1335C7E000D90E2C /* OCHandMock.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		08CEA80613342FA700D883DA /* ExpectationCounterTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 08CEA80513342FA700D883DA /* ExpectationCounterTest.m */; };
 		08CEA80A1334302100D883DA /* HMExpectationCounter.h in Headers */ = {isa = PBXBuildFile; fileRef = 08CEA8081334302100D883DA /* HMExpectationCounter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		08CEA80B1334302100D883DA /* HMExpectationCounter.m in Sources */ = {isa = PBXBuildFile; fileRef = 08CEA8091334302100D883DA /* HMExpectationCounter.m */; };
@@ -58,6 +59,7 @@
 		08B89A3D133574D900D90E2C /* VerifierTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VerifierTest.m; sourceTree = "<group>"; };
 		08B89A3F1335758D00D90E2C /* HMVerifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMVerifier.h; sourceTree = "<group>"; };
 		08B89A401335758E00D90E2C /* HMVerifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMVerifier.m; sourceTree = "<group>"; };
+		08B89A7D1335C7E000D90E2C /* OCHandMock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCHandMock.h; sourceTree = "<group>"; };
 		08CEA80513342FA700D883DA /* ExpectationCounterTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpectationCounterTest.m; sourceTree = "<group>"; };
 		08CEA8081334302100D883DA /* HMExpectationCounter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMExpectationCounter.h; sourceTree = "<group>"; };
 		08CEA8091334302100D883DA /* HMExpectationCounter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMExpectationCounter.m; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 				087949E81331D04400731E22 /* HMVerifiable.h */,
 				08B89A3F1335758D00D90E2C /* HMVerifier.h */,
 				08B89A401335758E00D90E2C /* HMVerifier.m */,
+				08B89A7D1335C7E000D90E2C /* OCHandMock.h */,
 				087949921331BAB800731E22 /* Supporting Files */,
 			);
 			path = OCHandMock;
@@ -176,6 +179,7 @@
 				08B89A22133492CF00D90E2C /* HMAbstractExpectation.h in Headers */,
 				08B89A321335361B00D90E2C /* HMExpectationMatcher.h in Headers */,
 				08B89A411335758E00D90E2C /* HMVerifier.h in Headers */,
+				08B89A7E1335C7E000D90E2C /* OCHandMock.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

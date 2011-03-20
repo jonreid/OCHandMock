@@ -148,13 +148,14 @@
 }
 
 
-- (void)testInvokingShouldNotSetExpectation
+- (void)testInvokingWithoutExpectationsShouldPass
 {
     // exercise
     [matcher setActual:@"abc"];
+    [matcher verify];
     
     // verify
-    STAssertFalse([matcher hasExpectations], nil);
+    assertThatUnsignedInteger([testCase failureCount], is(equalToUnsignedInteger(0)));
 }
 
 

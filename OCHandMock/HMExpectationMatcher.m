@@ -10,8 +10,8 @@
 
 
 @interface HMExpectationMatcher ()
+@property(nonatomic, retain, readwrite) id<NSObject> actualArgument;
 @property(nonatomic, retain) id<HCMatcher, NSObject> expectedMatch;
-@property(nonatomic, retain) id<NSObject> actualArgument;
 @property(nonatomic, assign) BOOL wasInvoked;
 - (void)verifyNoExpectations;
 - (void)verifyExpectation;
@@ -21,8 +21,8 @@
 
 @implementation HMExpectationMatcher
 
-@synthesize expectedMatch;
 @synthesize actualArgument;
+@synthesize expectedMatch;
 @synthesize wasInvoked;
 
 
@@ -35,8 +35,8 @@
 
 - (void)dealloc
 {
-    [expectedMatch release];
     [actualArgument release];
+    [expectedMatch release];
     [super dealloc];
 }
 
@@ -75,6 +75,9 @@
 
 - (void)verify
 {
+    if (![self hasExpectations])
+        return;
+    
     if (expectedMatch == nil)
         [self verifyNoExpectations];
     else

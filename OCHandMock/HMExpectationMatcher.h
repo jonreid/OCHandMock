@@ -10,6 +10,8 @@
 
 @interface HMExpectationMatcher : HMAbstractExpectation
 
+@property(nonatomic, retain, readonly) id<NSObject> actualArgument;
+
 - (id)initWithName:(NSString *)aName testCase:(id)test;
 
 - (void)setExpected:(id<HCMatcher, NSObject>)aMatcher;

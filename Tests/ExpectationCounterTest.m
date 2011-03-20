@@ -158,13 +158,14 @@
 }
 
 
-- (void)testIncrementingShouldNotSetExpectation
+- (void)testIncrementingWithoutExpectationsShouldPass
 {
     // exercise
     [counter increment];
+    [counter verify];
     
     // verify
-    STAssertFalse([counter hasExpectations], nil);
+    assertThatUnsignedInteger([testCase failureCount], is(equalToUnsignedInteger(0)));
 }
 
 

@@ -67,6 +67,9 @@
 
 - (void)verify
 {
+    if (![self hasExpectations])
+        return;
+    
     [self assertExpectedUnsignedInteger:expectedCalls
             equalsActualUnsignedInteger:actualCalls
                                 message:@"did not receive the expected Count."];

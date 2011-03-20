@@ -36,6 +36,15 @@
 @synthesize hasExpectations;
 
 
+- (id)init
+{
+    [NSException raise:NSInternalInconsistencyException
+                format:@"-init is not a valid initializer for %@", NSStringFromClass([self class])];
+    [self release];
+    return nil;
+}
+
+
 - (id)initWithName:(NSString *)aName testCase:(id)test
 {
     self = [super init];
