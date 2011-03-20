@@ -8,6 +8,9 @@
 @protocol HCMatcher;
 
 
+/**
+    Verifies that argument satisfies OCHamcrest matcher.
+ */
 @interface HMExpectationMatcher : HMAbstractExpectation
 
 @property(nonatomic, retain, readonly) id<NSObject> actualArgument;

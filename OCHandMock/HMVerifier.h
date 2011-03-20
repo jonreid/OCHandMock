@@ -8,7 +8,7 @@
 
 @interface HMVerifier : NSObject
 
-/// Verifies all HMVerifiable ivars in the given object.
+/// Verifies all HMVerifiable instance variables in the given object.
 + (void)verify:(id)object;
 
 @end

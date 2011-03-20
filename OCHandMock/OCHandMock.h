@@ -5,4 +5,5 @@
 
 #import "HMExpectationCounter.h"
 #import "HMExpectationMatcher.h"
+#import "HMTestCase.h"
 #import "HMVerifier.h"

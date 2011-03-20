@@ -7,8 +7,8 @@
 #import "HMExpectationMatcher.h"
 
 	// Test support
-#import <SenTestingKit/SenTestingKit.h>
 #import "MockTestCase.h"
+#import <SenTestingKit/SenTestingKit.h>
 
 #define HC_SHORTHAND
 #import <OCHamcrestIOS/OCHamcrestIOS.h>

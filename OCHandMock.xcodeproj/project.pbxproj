@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		081DB1CC1336B241007CE199 /* TestCaseTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 081DB1CB1336B241007CE199 /* TestCaseTest.m */; };
+		081DB1D01336B2BC007CE199 /* HMTestCase.h in Headers */ = {isa = PBXBuildFile; fileRef = 081DB1CE1336B2BC007CE199 /* HMTestCase.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		081DB1D11336B2BC007CE199 /* HMTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 081DB1CF1336B2BC007CE199 /* HMTestCase.m */; };
+		081DB1D91336B79B007CE199 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 081DB1D81336B79B007CE199 /* SenTestingKit.framework */; };
 		087949901331BAB800731E22 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0879498F1331BAB800731E22 /* Foundation.framework */; };
 		087949CC1331C88600731E22 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0879498F1331BAB800731E22 /* Foundation.framework */; };
 		087949DF1331C9D500731E22 /* libOCHandMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0879498C1331BAB800731E22 /* libOCHandMock.a */; };
@@ -40,6 +44,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		081DB1CB1336B241007CE199 /* TestCaseTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestCaseTest.m; sourceTree = "<group>"; };
+		081DB1CE1336B2BC007CE199 /* HMTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMTestCase.h; sourceTree = "<group>"; };
+		081DB1CF1336B2BC007CE199 /* HMTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMTestCase.m; sourceTree = "<group>"; };
+		081DB1D81336B79B007CE199 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Developer/Library/Frameworks/SenTestingKit.framework; sourceTree = SDKROOT; };
 		0879498C1331BAB800731E22 /* libOCHandMock.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libOCHandMock.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		0879498F1331BAB800731E22 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		087949931331BAB800731E22 /* OCHandMock-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OCHandMock-Prefix.pch"; sourceTree = "<group>"; };
@@ -72,6 +80,7 @@
 			files = (
 				087949901331BAB800731E22 /* Foundation.framework in Frameworks */,
 				08B89A1913348D8900D90E2C /* OCHamcrestIOS.framework in Frameworks */,
+				081DB1D91336B79B007CE199 /* SenTestingKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,6 +122,7 @@
 			children = (
 				0879498F1331BAB800731E22 /* Foundation.framework */,
 				087949E01331CB1900731E22 /* OCHamcrestIOS.framework */,
+				081DB1D81336B79B007CE199 /* SenTestingKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -127,6 +137,8 @@
 				08CEA8091334302100D883DA /* HMExpectationCounter.m */,
 				08B89A301335361B00D90E2C /* HMExpectationMatcher.h */,
 				08B89A311335361B00D90E2C /* HMExpectationMatcher.m */,
+				081DB1CE1336B2BC007CE199 /* HMTestCase.h */,
+				081DB1CF1336B2BC007CE199 /* HMTestCase.m */,
 				087949E81331D04400731E22 /* HMVerifiable.h */,
 				08B89A3F1335758D00D90E2C /* HMVerifier.h */,
 				08B89A401335758E00D90E2C /* HMVerifier.m */,
@@ -149,6 +161,7 @@
 			children = (
 				08CEA80513342FA700D883DA /* ExpectationCounterTest.m */,
 				08B89A2E133535D300D90E2C /* ExpectationMatcherTest.m */,
+				081DB1CB1336B241007CE199 /* TestCaseTest.m */,
 				08B89A3D133574D900D90E2C /* VerifierTest.m */,
 				08B89A34133536B600D90E2C /* MockTestCase.h */,
 				08B89A35133536B600D90E2C /* MockTestCase.m */,
@@ -180,6 +193,7 @@
 				08B89A321335361B00D90E2C /* HMExpectationMatcher.h in Headers */,
 				08B89A411335758E00D90E2C /* HMVerifier.h in Headers */,
 				08B89A7E1335C7E000D90E2C /* OCHandMock.h in Headers */,
+				081DB1D01336B2BC007CE199 /* HMTestCase.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,6 +297,7 @@
 				08B89A23133492CF00D90E2C /* HMAbstractExpectation.m in Sources */,
 				08B89A331335361B00D90E2C /* HMExpectationMatcher.m in Sources */,
 				08B89A421335758E00D90E2C /* HMVerifier.m in Sources */,
+				081DB1D11336B2BC007CE199 /* HMTestCase.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,6 +309,7 @@
 				08B89A2F133535D300D90E2C /* ExpectationMatcherTest.m in Sources */,
 				08B89A36133536B600D90E2C /* MockTestCase.m in Sources */,
 				08B89A3E133574DA00D90E2C /* VerifierTest.m in Sources */,
+				081DB1CC1336B241007CE199 /* TestCaseTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -384,6 +400,10 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				DSTROOT = /tmp/OCHandMock.dst;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "OCHandMock/OCHandMock-Prefix.pch";
 				OTHER_LDFLAGS = "-ObjC";
@@ -396,6 +416,10 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				DSTROOT = /tmp/OCHandMock.dst;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "OCHandMock/OCHandMock-Prefix.pch";
 				OTHER_LDFLAGS = "-ObjC";

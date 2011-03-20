@@ -6,6 +6,9 @@
 #import "HMAbstractExpectation.h"
 
 
+/**
+    Verifies that incremented count matches expectation.
+ */
 @interface HMExpectationCounter : HMAbstractExpectation
 
 - (id)initWithName:(NSString *)aName testCase:(id)test;

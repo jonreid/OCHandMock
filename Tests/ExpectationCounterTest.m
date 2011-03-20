@@ -7,8 +7,8 @@
 #import "HMExpectationCounter.h"
 
 	// Test support
-#import <SenTestingKit/SenTestingKit.h>
 #import "MockTestCase.h"
+#import <SenTestingKit/SenTestingKit.h>
 
 #define HC_SHORTHAND
 #import <OCHamcrestIOS/OCHamcrestIOS.h>
@@ -139,7 +139,7 @@
     // verify
     assertThatUnsignedInteger([testCase failureCount], is(equalToUnsignedInteger(1)));
     assertThat([[testCase failureException] reason],
-               is(@"counter did not receive the expected Count. Expected <1>, but was <3>"));
+               is(@"counter did not receive the expected count. Expected <1>, but was <3>"));
 }
 
 
@@ -154,7 +154,7 @@
     // verify
     assertThatUnsignedInteger([testCase failureCount], is(equalToUnsignedInteger(1)));
     assertThat([[testCase failureException] reason],
-               is(@"counter did not receive the expected Count. Expected <1>, but was <0>"));
+               is(@"counter did not receive the expected count. Expected <1>, but was <0>"));
 }
 
 
