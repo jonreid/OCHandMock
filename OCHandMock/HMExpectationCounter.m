@@ -72,7 +72,7 @@
     
     [self assertExpectedUnsignedInteger:expectedCalls
             equalsActualUnsignedInteger:actualCalls
-                                message:@"did not receive the expected Count."];
+                                message:@"did not receive the expected count."];
 }
 
 @end
