@@ -12,16 +12,19 @@
 		087949DF1331C9D500731E22 /* libOCHandMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0879498C1331BAB800731E22 /* libOCHandMock.a */; };
 		087949E11331CB1900731E22 /* OCHamcrestIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 087949E01331CB1900731E22 /* OCHamcrestIOS.framework */; };
 		087949E91331D04400731E22 /* HMVerifiable.h in Headers */ = {isa = PBXBuildFile; fileRef = 087949E81331D04400731E22 /* HMVerifiable.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		08B89A121334883A00D90E2C /* HMExpectation.h in Headers */ = {isa = PBXBuildFile; fileRef = 08B89A111334883A00D90E2C /* HMExpectation.h */; };
+		08B89A121334883A00D90E2C /* HMExpectation.h in Headers */ = {isa = PBXBuildFile; fileRef = 08B89A111334883A00D90E2C /* HMExpectation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		08B89A1913348D8900D90E2C /* OCHamcrestIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 087949E01331CB1900731E22 /* OCHamcrestIOS.framework */; };
-		08B89A22133492CF00D90E2C /* HMAbstractExpectation.h in Headers */ = {isa = PBXBuildFile; fileRef = 08B89A20133492CF00D90E2C /* HMAbstractExpectation.h */; };
+		08B89A22133492CF00D90E2C /* HMAbstractExpectation.h in Headers */ = {isa = PBXBuildFile; fileRef = 08B89A20133492CF00D90E2C /* HMAbstractExpectation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		08B89A23133492CF00D90E2C /* HMAbstractExpectation.m in Sources */ = {isa = PBXBuildFile; fileRef = 08B89A21133492CF00D90E2C /* HMAbstractExpectation.m */; };
 		08B89A2F133535D300D90E2C /* ExpectationMatcherTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 08B89A2E133535D300D90E2C /* ExpectationMatcherTest.m */; };
-		08B89A321335361B00D90E2C /* HMExpectationMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 08B89A301335361B00D90E2C /* HMExpectationMatcher.h */; };
+		08B89A321335361B00D90E2C /* HMExpectationMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 08B89A301335361B00D90E2C /* HMExpectationMatcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		08B89A331335361B00D90E2C /* HMExpectationMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 08B89A311335361B00D90E2C /* HMExpectationMatcher.m */; };
 		08B89A36133536B600D90E2C /* MockTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 08B89A35133536B600D90E2C /* MockTestCase.m */; };
+		08B89A3E133574DA00D90E2C /* VerifierTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 08B89A3D133574D900D90E2C /* VerifierTest.m */; };
+		08B89A411335758E00D90E2C /* HMVerifier.h in Headers */ = {isa = PBXBuildFile; fileRef = 08B89A3F1335758D00D90E2C /* HMVerifier.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		08B89A421335758E00D90E2C /* HMVerifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 08B89A401335758E00D90E2C /* HMVerifier.m */; };
 		08CEA80613342FA700D883DA /* ExpectationCounterTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 08CEA80513342FA700D883DA /* ExpectationCounterTest.m */; };
-		08CEA80A1334302100D883DA /* HMExpectationCounter.h in Headers */ = {isa = PBXBuildFile; fileRef = 08CEA8081334302100D883DA /* HMExpectationCounter.h */; };
+		08CEA80A1334302100D883DA /* HMExpectationCounter.h in Headers */ = {isa = PBXBuildFile; fileRef = 08CEA8081334302100D883DA /* HMExpectationCounter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		08CEA80B1334302100D883DA /* HMExpectationCounter.m in Sources */ = {isa = PBXBuildFile; fileRef = 08CEA8091334302100D883DA /* HMExpectationCounter.m */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +55,9 @@
 		08B89A311335361B00D90E2C /* HMExpectationMatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMExpectationMatcher.m; sourceTree = "<group>"; };
 		08B89A34133536B600D90E2C /* MockTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MockTestCase.h; sourceTree = "<group>"; };
 		08B89A35133536B600D90E2C /* MockTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockTestCase.m; sourceTree = "<group>"; };
+		08B89A3D133574D900D90E2C /* VerifierTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VerifierTest.m; sourceTree = "<group>"; };
+		08B89A3F1335758D00D90E2C /* HMVerifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMVerifier.h; sourceTree = "<group>"; };
+		08B89A401335758E00D90E2C /* HMVerifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMVerifier.m; sourceTree = "<group>"; };
 		08CEA80513342FA700D883DA /* ExpectationCounterTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpectationCounterTest.m; sourceTree = "<group>"; };
 		08CEA8081334302100D883DA /* HMExpectationCounter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMExpectationCounter.h; sourceTree = "<group>"; };
 		08CEA8091334302100D883DA /* HMExpectationCounter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMExpectationCounter.m; sourceTree = "<group>"; };
@@ -120,6 +126,8 @@
 				08B89A301335361B00D90E2C /* HMExpectationMatcher.h */,
 				08B89A311335361B00D90E2C /* HMExpectationMatcher.m */,
 				087949E81331D04400731E22 /* HMVerifiable.h */,
+				08B89A3F1335758D00D90E2C /* HMVerifier.h */,
+				08B89A401335758E00D90E2C /* HMVerifier.m */,
 				087949921331BAB800731E22 /* Supporting Files */,
 			);
 			path = OCHandMock;
@@ -138,6 +146,7 @@
 			children = (
 				08CEA80513342FA700D883DA /* ExpectationCounterTest.m */,
 				08B89A2E133535D300D90E2C /* ExpectationMatcherTest.m */,
+				08B89A3D133574D900D90E2C /* VerifierTest.m */,
 				08B89A34133536B600D90E2C /* MockTestCase.h */,
 				08B89A35133536B600D90E2C /* MockTestCase.m */,
 				087949CF1331C88600731E22 /* Supporting Files */,
@@ -166,6 +175,7 @@
 				08B89A121334883A00D90E2C /* HMExpectation.h in Headers */,
 				08B89A22133492CF00D90E2C /* HMAbstractExpectation.h in Headers */,
 				08B89A321335361B00D90E2C /* HMExpectationMatcher.h in Headers */,
+				08B89A411335758E00D90E2C /* HMVerifier.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,6 +278,7 @@
 				08CEA80B1334302100D883DA /* HMExpectationCounter.m in Sources */,
 				08B89A23133492CF00D90E2C /* HMAbstractExpectation.m in Sources */,
 				08B89A331335361B00D90E2C /* HMExpectationMatcher.m in Sources */,
+				08B89A421335758E00D90E2C /* HMVerifier.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,6 +289,7 @@
 				08CEA80613342FA700D883DA /* ExpectationCounterTest.m in Sources */,
 				08B89A2F133535D300D90E2C /* ExpectationMatcherTest.m in Sources */,
 				08B89A36133536B600D90E2C /* MockTestCase.m in Sources */,
+				08B89A3E133574DA00D90E2C /* VerifierTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

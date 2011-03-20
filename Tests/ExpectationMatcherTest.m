@@ -44,7 +44,7 @@
 
 - (void)testNoSettingsShouldPassVerification
 {
-	// exercise
+    // exercise
     [matcher verify];
     
     // verify
