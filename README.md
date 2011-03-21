@@ -31,12 +31,12 @@ designed to address my problems:
   Xcode errors, and the remaining tests are executed.
 
 
-Example: Mock object in fixture
-===============================
+Example: Mock within fixture
+============================
 
-Let's say we have a class `Foo` and want to mock a replacement for it. The
-method we want to mock is `-foo:` and it takes an `id` argument. The class
-interface might look like this:
+Let's say we have a class Foo and want to mock a replacement for it. The method
+we want to mock is `-foo:` and it takes an `id` argument. The class interface
+might look like this:
 
     @interface MockFoo : Foo <HMVerifiable>
     @property(nonatomic, retain) HMExpectationCounter *counter;
@@ -149,3 +149,54 @@ tests less fragile.
 Besides `-setExpected:`, you can also call `-setExpectNothing` to verify that
 something _isn't_ invoked. And where no expectations are set, nothing is
 demanded.
+
+HMTestCase's `-verify` method verifies all instance variables in the test
+fixture. ...Among other things, as we'll see in the second example.
+
+
+Example: Mock within test method
+================================
+
+What if you don't want a mock to live in your fixture, but instead you want to create it on the fly in a single test method? Let's modify `MockFoo` to allow this.
+
+First, life is easier with convenience methods:
+
+    @interface MockFoo : Foo <HMVerifiable>
+    // ...Same properties as before.
+    - (id)initWithTestCase:(id)test;
+    @end
+
+    @implementation MockFoo
+
+    + (id)mockWithTestCase:(id)test
+    {
+        return [[[self alloc] initWithTestCase:test] autorelease];
+    }
+
+Only one change is necessary to the initializer:
+
+    - (id)initWithTestCase:(id)test
+    {
+        self = [super init];
+        if (self)
+        {
+            [test registerVerifiable:self];
+            // ...Same property initialization as before.
+        }
+        return self;
+    }
+
+`[test registerVerifiable:self]` is the glue that lets the HMTestCase know about the existence of this new verifiable object. So for a test class that doesn't have `MockFoo` in the fixture, here's the test method:
+
+    - (void)testFoo
+    {
+        MockFoo *mock = [MockFoo mockWithTestCase:self];
+        [[mock counter] setExpected:1];
+        [[mock arg] setExpected:is(@"bar")];
+
+        // ...Do something here that should invoke [mock foo:@"bar"]
+
+        [self verify];
+    }
+
+HMTestCase's `-verify` method also verifies all objects that have been registered using `-registerVerifiable:`.
