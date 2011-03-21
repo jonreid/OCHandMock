@@ -31,24 +31,24 @@ designed to address my problems:
   Xcode errors, and the remaining tests are executed.
 
 
-Example: Mock within fixture
-============================
+Example using HMTestCase
+========================
 
 Let's say we have a class Foo and want to mock a replacement for it. The method
 we want to mock is `-foo:` and it takes an `id` argument. The class interface
 might look like this:
 
-    @interface MockFoo : Foo <HMVerifiable>
+    @interface MockFoo : Foo
     @property(nonatomic, retain) HMExpectationCounter *counter;
     @property(nonatomic, retain) HMExpectationMatcher *arg;
+    - (id)initWithTestCase:(id)test;
     @end
-
-We declare that our mock class conforms to `HMVerifiable`. This simply means
-that it will provide a `-verify` method.
 
 The first property is a counter, to count the number of times the method is
 invoked. The second property is a matcher, allowing us to specify our
 expectations of the method argument using OCHamcrest.
+
+The initializer declaration is there so we can write a convenience method.
 
 Let's go on to the implementation.
 
@@ -56,6 +56,11 @@ Let's go on to the implementation.
 
     @synthesize counter;
     @synthesize arg;
+
+    + (id)mockWithTestCase:(id)test
+    {
+        return [[[self alloc] initWithTestCase:test] autorelease];
+    }
 
     - (id)initWithTestCase:(id)test
     {
@@ -89,23 +94,47 @@ Here's the mock method:
         [arg setActual:theArg];
     }
 
+    @end
+
 It increments the invocation counter, and records the actual argument. Both are
 expectations, and by default are immediately validated.
 
-Finally, here's the `-verify` method:
+Now let's set up a test case that uses this mock object in its fixture. The
+simplest way is to use the test class `HMTestCase` which inherits from OCUnit's
+`SenTestCase`.
 
-    - (void)verify
+    @interface SimpleTest : HMTestCase
+    @end
+
+    @implementation SimpleTest
+
+    - (void)testFoo
     {
-        [HMVerifier verify:self];
+        MockFoo *mock = [MockFoo mockWithTestCase:self];
+        [[mock counter] setExpected:1];
+        [[mock arg] setExpected:is(@"bar")];
+
+        // ...Do something here that should invoke [mock foo:@"bar"]
+
+        [self verify];
     }
 
     @end
 
-This asks OCHandMock to verify all instance variables that are verifiable -- in
-our case, the two expectations.
+The OCHamcrest matcher `is(@"bar")` is an easy way to test for equality. You can
+specify any matcher expression. Using less restrictive matchers will make your
+tests less fragile.
 
-Now let's set up a test case that uses this mock object in its fixture. The test
-case class is `HMTestCase` which inherits from OCUnit's `SenTestCase`.
+Besides `-setExpected:`, you can also call `-setExpectNothing` to verify that
+something _isn't_ invoked. And where no expectations are set, nothing is
+demanded.
+
+HMTestCase's `-verify` method verifies all expectations for that test.
+
+It is common to place mock objects in the test fixture so that they are
+available to all test cases. This is straightforward with OCHandMock-based
+mocks. Just remember to have your `-setUp` and `-tearDown` methods invoke the
+superclass:
 
     @interface TestInFixture : HMTestCase
     {
@@ -127,66 +156,31 @@ case class is `HMTestCase` which inherits from OCUnit's `SenTestCase`.
         [super tearDown];
     }
 
-Pretty straightforward. Now for the test. Let's set the expectation that `-foo`
-will be invoked once, with the string "bar", and verify it:
 
-    - (void)testFoo
-    {
-        [[mock counter] setExpected:1];
-        [[mock arg] setExpected:is(@"bar")];
+Example using another test framework
+====================================
 
-        // ...Do something here that should invoke [mock foo:@"bar"]
+HMTestCase is a subclass of OCUnit's SenTestCase. What if you don't use OCUnit?
+One approach would be to customize your own copy of OCHandMock so that
+HMTestCase inherits from the standard test class of your preferred framework.
+But there is also a way to manage your mock objects without rebuilding
+OCHandMock:
 
-        [self verify];
-    }
-
-    @end
-
-The OCHamcrest matcher `is(@"bar")` is an easy way to test for equality. You can
-specify any matcher expression. Using less restrictive matchers will make your
-tests less fragile.
-
-Besides `-setExpected:`, you can also call `-setExpectNothing` to verify that
-something _isn't_ invoked. And where no expectations are set, nothing is
-demanded.
-
-HMTestCase's `-verify` method verifies all instance variables in the test
-fixture. ...Among other things, as we'll see in the second example.
-
-
-Example: Mock within test method
-================================
-
-What if you don't want a mock to live in your fixture, but instead you want to create it on the fly in a single test method? Let's modify `MockFoo` to allow this.
-
-First, life is easier with convenience methods:
+Let's define MockFoo as we did before, with one addition: We declare that it conforms to HMVerifiable.
 
     @interface MockFoo : Foo <HMVerifiable>
-    // ...Same properties as before.
-    - (id)initWithTestCase:(id)test;
-    @end
 
-    @implementation MockFoo
+To satisfy this protocol, we provide a `-verify` method in the implementation:
 
-    + (id)mockWithTestCase:(id)test
+    - (void)verify
     {
-        return [[[self alloc] initWithTestCase:test] autorelease];
+        [HMVerifier verify:self];
     }
 
-Only one change is necessary to the initializer:
+This will examine all the verifiable instance variables, including any belonging
+to superclasses.
 
-    - (id)initWithTestCase:(id)test
-    {
-        self = [super init];
-        if (self)
-        {
-            [test registerVerifiable:self];
-            // ...Same property initialization as before.
-        }
-        return self;
-    }
-
-`[test registerVerifiable:self]` is the glue that lets the HMTestCase know about the existence of this new verifiable object. So for a test class that doesn't have `MockFoo` in the fixture, here's the test method:
+Finally, to do the verification, we invoke it directly on any mock objects created in the test method:
 
     - (void)testFoo
     {
@@ -196,7 +190,10 @@ Only one change is necessary to the initializer:
 
         // ...Do something here that should invoke [mock foo:@"bar"]
 
-        [self verify];
+        [mock verify];
     }
 
-HMTestCase's `-verify` method also verifies all objects that have been registered using `-registerVerifiable:`.
+If you have placed mock objects in the test fixture, they can all be verified
+with a single call. Just place a copy of the `-verify` method above in your test
+class. Then call `[self verify]` in your test methods, and it will check all
+verifiable instance variables.

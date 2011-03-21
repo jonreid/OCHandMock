@@ -40,7 +40,6 @@
 - (void)verify
 {
     [verifiables enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop){ [obj verify]; }];
-    [HMVerifier verify:self];
 }
 
 @end

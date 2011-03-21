@@ -5,6 +5,8 @@
 
 #import "HMAbstractExpectation.h"
 
+#import "HMTestCase.h"
+
 #import <OCHamcrestIOS/OCHamcrestIOS.h>
 #import <OCHamcrestIOS/HCStringDescription.h>
 
@@ -53,6 +55,9 @@
         name = [aName copy];
         testCase = test;
         failureModeIsImmediate = YES;
+        
+        if ([test isKindOfClass:[HMTestCase class]])
+            [test registerVerifiable:self];
     }
     return self;
 }

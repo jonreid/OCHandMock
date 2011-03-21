@@ -12,12 +12,12 @@
  
     Any subclasses that define -setUp and -tearDown must invoke [super setUp] and [super tearDown].
  */
-@interface HMTestCase : SenTestCase
+@interface HMTestCase : SenTestCase <HMVerifiable>
 
 /// Registers a verifiable created within a test method.
 - (void)registerVerifiable:(id<HMVerifiable>)object;
 
-/// Verifies all registered veriables, plus any verifiable instance variables.
+/// Verifies all registered verifables.
 - (void)verify;
 
 @end

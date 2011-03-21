@@ -16,11 +16,11 @@
 #import <OCHamcrestIOS/OCHamcrestIOS.h>
 
 
-@interface TestingTestCase : HMTestCase
+@interface TestingHMTestCase : HMTestCase
 @property(nonatomic, assign) NSUInteger failureCount;
 @end
 
-@implementation TestingTestCase
+@implementation TestingHMTestCase
 @synthesize failureCount;
 
 - (void)failWithException:(NSException *)exception;
@@ -33,7 +33,7 @@
 
 #pragma mark -
 
-@interface TestCaseWithVerifiableInFixture : TestingTestCase
+@interface TestCaseWithVerifiableInFixture : TestingHMTestCase
 {
     HMExpectationCounter *counter;
 }
@@ -71,10 +71,7 @@
 {
     self = [super init];
     if (self)
-    {
-        [test registerVerifiable:self];
         counter = [[HMExpectationCounter alloc] initWithName:@"counter" testCase:test];
-    }
     return self;
 }
 
@@ -92,7 +89,7 @@
 @end
 
 
-@interface TestCaseWithRegisteredVerifiable : TestingTestCase
+@interface TestCaseWithRegisteredVerifiable : TestingHMTestCase
 @end
 
 @implementation TestCaseWithRegisteredVerifiable
