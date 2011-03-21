@@ -62,10 +62,8 @@ Let's go on to the implementation.
         self = [super init];
         if (self)
         {
-            counter = [[HMExpectationCounter alloc] initWithName:@"counter
-                                                        testCase:test];
-            arg = [[HMExpectationMatcher alloc] initWithName:@"arg"
-                                                    testCase:test];
+            counter = [[HMExpectationCounter alloc] initWithName:@"counter testCase:test];
+            arg = [[HMExpectationMatcher alloc] initWithName:@"arg" testCase:test];
         }
         return self;
     }
