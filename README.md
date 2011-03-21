@@ -126,8 +126,7 @@ specify any matcher expression. Using less restrictive matchers will make your
 tests less fragile.
 
 Besides `-setExpected:`, you can also call `-setExpectNothing` to verify that
-something _isn't_ invoked. And where no expectations are set, nothing is
-demanded.
+something _isn't_ invoked.
 
 HMTestCase's `-verify` method verifies all expectations for that test.
 
