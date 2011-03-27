@@ -39,8 +39,8 @@ we want to mock is `-foo:` and it takes an `id` argument. The class interface
 might look like this:
 
     @interface MockFoo : Foo
-    @property(nonatomic, retain) HMExpectationCounter *counter;
-    @property(nonatomic, retain) HMExpectationMatcher *arg;
+    @property(nonatomic, retain) HMExpectationCounter *countFoo;
+    @property(nonatomic, retain) HMExpectationMatcher *matchFoo;
     - (id)initWithTestCase:(id)test;
     @end
 
@@ -67,17 +67,16 @@ Let's go on to the implementation.
         self = [super init];
         if (self)
         {
-            counter = [[HMExpectationCounter alloc] initWithName:@"counter testCase:test];
-            arg = [[HMExpectationMatcher alloc] initWithName:@"arg" testCase:test];
+            countFoo = [[HMExpectationCounter alloc] initWithName:@"foo" testCase:test];
+            matchFoo = [[HMExpectationMatcher alloc] initWithName:@"foo" testCase:test];
         }
         return self;
     }
 
     - (void)dealloc
     {
-        [counter release];
-        [arg release];
-
+        [countFoo release];
+        [matchFoo release];
         [super dealloc];
     }
 
@@ -88,10 +87,10 @@ exceptions.
 
 Here's the mock method:
 
-    - (void)foo:(id)theArg
+    - (void)foo:(id)argument
     {
-        [counter increment];
-        [arg setActual:theArg];
+        [countFoo increment];
+        [matchFoo setActual:argument];
     }
 
     @end
@@ -111,8 +110,8 @@ simplest way is to use the test class `HMTestCase` which inherits from OCUnit's
     - (void)testFoo
     {
         MockFoo *mock = [MockFoo mockWithTestCase:self];
-        [[mock counter] setExpected:1];
-        [[mock arg] setExpected:is(@"bar")];
+        [[mock countFoo] setExpected:1];
+        [[mock matchFoo] setExpected:is(@"bar")];
 
         // ...Do something here that should invoke [mock foo:@"bar"]
 
@@ -184,15 +183,15 @@ Finally, to do the verification, we invoke it directly on any mock objects creat
     - (void)testFoo
     {
         MockFoo *mock = [MockFoo mockWithTestCase:self];
-        [[mock counter] setExpected:1];
-        [[mock arg] setExpected:is(@"bar")];
+        [[mock countFoo] setExpected:1];
+        [[mock matchFoo] setExpected:is(@"bar")];
 
         // ...Do something here that should invoke [mock foo:@"bar"]
 
         [mock verify];
     }
 
-If you have placed mock objects in the test fixture, they can all be verified
-with a single call. Just place a copy of the `-verify` method above in your test
-class. Then call `[self verify]` in your test methods, and it will check all
-verifiable instance variables.
+Things are easier if the mock objects live in the test fixture, because they can
+all be verified with a single call. Just place a copy of the `-verify` method
+above in your test class. Then call `[self verify]` in your test methods, and it
+will check all verifiable instance variables.
