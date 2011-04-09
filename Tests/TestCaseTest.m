@@ -23,7 +23,7 @@
 @implementation TestingHMTestCase
 @synthesize failureCount;
 
-- (void)failWithException:(NSException *)exception;
+- (void)failWithException:(NSException *)exception
 {
     ++failureCount;
 }

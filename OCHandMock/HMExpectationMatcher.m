@@ -26,7 +26,7 @@
 @synthesize wasInvoked;
 
 
-- (id)initWithName:(NSString *)aName testCase:(id)test;
+- (id)initWithName:(NSString *)aName testCase:(id)test
 {
     self = [super initWithName:aName testCase:test];
     return self;
