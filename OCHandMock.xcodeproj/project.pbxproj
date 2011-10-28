@@ -14,10 +14,8 @@
 		087949901331BAB800731E22 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0879498F1331BAB800731E22 /* Foundation.framework */; };
 		087949CC1331C88600731E22 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0879498F1331BAB800731E22 /* Foundation.framework */; };
 		087949DF1331C9D500731E22 /* libOCHandMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0879498C1331BAB800731E22 /* libOCHandMock.a */; };
-		087949E11331CB1900731E22 /* OCHamcrestIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 087949E01331CB1900731E22 /* OCHamcrestIOS.framework */; };
 		087949E91331D04400731E22 /* HMVerifiable.h in Headers */ = {isa = PBXBuildFile; fileRef = 087949E81331D04400731E22 /* HMVerifiable.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		08B89A121334883A00D90E2C /* HMExpectation.h in Headers */ = {isa = PBXBuildFile; fileRef = 08B89A111334883A00D90E2C /* HMExpectation.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		08B89A1913348D8900D90E2C /* OCHamcrestIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 087949E01331CB1900731E22 /* OCHamcrestIOS.framework */; };
 		08B89A22133492CF00D90E2C /* HMAbstractExpectation.h in Headers */ = {isa = PBXBuildFile; fileRef = 08B89A20133492CF00D90E2C /* HMAbstractExpectation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		08B89A23133492CF00D90E2C /* HMAbstractExpectation.m in Sources */ = {isa = PBXBuildFile; fileRef = 08B89A21133492CF00D90E2C /* HMAbstractExpectation.m */; };
 		08B89A2F133535D300D90E2C /* ExpectationMatcherTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 08B89A2E133535D300D90E2C /* ExpectationMatcherTest.m */; };
@@ -31,6 +29,8 @@
 		08CEA80613342FA700D883DA /* ExpectationCounterTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 08CEA80513342FA700D883DA /* ExpectationCounterTest.m */; };
 		08CEA80A1334302100D883DA /* HMExpectationCounter.h in Headers */ = {isa = PBXBuildFile; fileRef = 08CEA8081334302100D883DA /* HMExpectationCounter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		08CEA80B1334302100D883DA /* HMExpectationCounter.m in Sources */ = {isa = PBXBuildFile; fileRef = 08CEA8091334302100D883DA /* HMExpectationCounter.m */; };
+		08D98C38145A4EB2005936F3 /* OCHamcrestIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0822780C145A4CF1001147CD /* OCHamcrestIOS.framework */; };
+		08D98C39145A4ECE005936F3 /* OCHamcrestIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0822780C145A4CF1001147CD /* OCHamcrestIOS.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,13 +48,13 @@
 		081DB1CE1336B2BC007CE199 /* HMTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMTestCase.h; sourceTree = "<group>"; };
 		081DB1CF1336B2BC007CE199 /* HMTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMTestCase.m; sourceTree = "<group>"; };
 		081DB1D81336B79B007CE199 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Developer/Library/Frameworks/SenTestingKit.framework; sourceTree = SDKROOT; };
+		0822780C145A4CF1001147CD /* OCHamcrestIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OCHamcrestIOS.framework; sourceTree = "<group>"; };
 		0879498C1331BAB800731E22 /* libOCHandMock.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libOCHandMock.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		0879498F1331BAB800731E22 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		087949931331BAB800731E22 /* OCHandMock-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OCHandMock-Prefix.pch"; sourceTree = "<group>"; };
 		087949CA1331C88600731E22 /* Tests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		087949D01331C88600731E22 /* Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Tests-Info.plist"; sourceTree = "<group>"; };
 		087949D41331C88600731E22 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
-		087949E01331CB1900731E22 /* OCHamcrestIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OCHamcrestIOS.framework; path = "Frameworks/OCHamcrest-1.4/OCHamcrestIOS.framework"; sourceTree = SOURCE_ROOT; };
 		087949E81331D04400731E22 /* HMVerifiable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMVerifiable.h; sourceTree = "<group>"; };
 		08B89A111334883A00D90E2C /* HMExpectation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMExpectation.h; sourceTree = "<group>"; };
 		08B89A20133492CF00D90E2C /* HMAbstractExpectation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMAbstractExpectation.h; sourceTree = "<group>"; };
@@ -79,8 +79,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				087949901331BAB800731E22 /* Foundation.framework in Frameworks */,
-				08B89A1913348D8900D90E2C /* OCHamcrestIOS.framework in Frameworks */,
 				081DB1D91336B79B007CE199 /* SenTestingKit.framework in Frameworks */,
+				08D98C38145A4EB2005936F3 /* OCHamcrestIOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,7 +90,7 @@
 			files = (
 				087949DF1331C9D500731E22 /* libOCHandMock.a in Frameworks */,
 				087949CC1331C88600731E22 /* Foundation.framework in Frameworks */,
-				087949E11331CB1900731E22 /* OCHamcrestIOS.framework in Frameworks */,
+				08D98C39145A4ECE005936F3 /* OCHamcrestIOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,8 +121,8 @@
 			isa = PBXGroup;
 			children = (
 				0879498F1331BAB800731E22 /* Foundation.framework */,
-				087949E01331CB1900731E22 /* OCHamcrestIOS.framework */,
 				081DB1D81336B79B007CE199 /* SenTestingKit.framework */,
+				0822780C145A4CF1001147CD /* OCHamcrestIOS.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -242,6 +242,7 @@
 		087949831331BAB800731E22 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastUpgradeCheck = 0420;
 				ORGANIZATIONNAME = "eBay Inc";
 			};
 			buildConfigurationList = 087949861331BAB800731E22 /* Build configuration list for PBXProject "OCHandMock" */;
@@ -379,6 +380,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(SRCROOT)\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "OCHandMock/OCHandMock-Prefix.pch";
@@ -395,6 +397,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(SRCROOT)\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "OCHandMock/OCHandMock-Prefix.pch";
@@ -411,6 +414,7 @@
 					"$(inherited)",
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+					"\"$(SRCROOT)\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Tests/Tests-Prefix.pch";
@@ -434,6 +438,7 @@
 					"$(inherited)",
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+					"\"$(SRCROOT)\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Tests/Tests-Prefix.pch";
