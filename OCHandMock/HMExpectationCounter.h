@@ -17,6 +17,4 @@
 
 - (void)increment;
 
-- (void)ignoreFurtherIncrements;
-
 @end
