@@ -16,6 +16,8 @@
 
 - (void)setHasExpectations;
 
+- (void)clearExpectations;
+
 - (void)assertExpectedUnsignedInteger:(NSUInteger)expectedValue
           equalsActualUnsignedInteger:(NSUInteger)actualValue
                               message:(NSString *)message;

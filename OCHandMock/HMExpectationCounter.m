@@ -50,6 +50,11 @@
 }
 
 
+- (void)ignoreFurtherIncrements
+{
+    [self clearExpectations];
+}
+
 #pragma mark -
 #pragma mark HMAbstractExpectation implementation
 

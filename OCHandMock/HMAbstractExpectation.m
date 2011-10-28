@@ -83,6 +83,12 @@
 }
 
 
+- (void)clearExpectations
+{
+    hasExpectations = NO;
+}
+
+
 - (void)assertExpectedUnsignedInteger:(NSUInteger)expectedValue
           equalsActualUnsignedInteger:(NSUInteger)actualValue
                               message:(NSString *)message

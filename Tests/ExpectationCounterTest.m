@@ -194,4 +194,18 @@
     assertThatUnsignedInteger([testCase failureCount], is(equalToUnsignedInteger(0)));
 }
 
+- (void)testIgnoreFurtherIncrements
+{
+    // given
+    [counter setExpected:1];
+    [counter increment];
+    [counter verify];
+
+    // when
+    [counter ignoreFurtherIncrements];
+
+    // then
+    [counter increment];
+}
+
 @end
